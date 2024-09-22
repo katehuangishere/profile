@@ -1,0 +1,574 @@
+/* 重置樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 全域樣式 */
+body {
+    font-family: "Roboto", sans-serif;
+    color: #000;
+    background-color: #331a00;
+    overflow-x: hidden;
+}
+
+/* 頁首 */
+header {
+    background-color: #663300;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+header h1 {
+    color: #fff5e6;
+    font-size: 2em;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff5e6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffbf80;
+}
+
+/* 開頭區域 */
+#intro {
+    padding: 80px 20px; 
+    background-color: #f5f5f5;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.intro-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+}
+
+.left-side {
+    text-align: center;
+    width: 30%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.left-side h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.left-side p {
+    font-size: 1.3em;
+    color: #555;
+    padding-top: 10px;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin: 0 15px;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    color: #cc6600;
+    transform: scale(1.2);
+}
+
+.right-side {
+    width: 65%;
+    padding-left: 40px;
+    margin-top: 5%;
+}
+
+.right-side h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.right-side p {
+    font-size: 1.3em;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* 響應式設計 - 小螢幕 */
+@media (max-width: 768px) {
+    .right-side {
+        width: 100%;
+        padding-left: 0;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .right-side h2 {
+        font-size: 2em;
+    }
+
+    .right-side p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+}
+
+/* Skills 區域 */
+#skills {
+    padding: 80px 20px;
+    background-color: #ff9966;
+    color: #000;
+}
+
+#skills h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-category {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.skill-category h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill-item {
+    background-color: #ffcc99;
+    color: #000;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+}
+
+/* 工作經歷區域 */
+#experience {
+    padding: 80px 20px;
+    background-color: #ffe6cc;
+    color: #000;
+}
+
+#experience h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #cc6600;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-container {
+    width: 45%;
+    padding: 20px;
+    position: relative;
+    background-color: inherit;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.timeline-container.left {
+    left: 0;
+}
+
+.timeline-container.right {
+    left: 55%;
+}
+
+.content {
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+/* 顯示箭頭（大螢幕） */
+.timeline-container.left::before,
+.timeline-container.right::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    border-width: 15px;
+    border-style: solid;
+}
+
+.timeline-container.left::before {
+    right: -15px;
+    border-color: transparent white transparent transparent;
+}
+
+.timeline-container.right::before {
+    left: -15px;
+    border-color: transparent transparent transparent white;
+}
+
+/* 響應式設計 - 手機 */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 0;
+    }
+
+    .timeline-container {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 20px; /* 增加卡片與時間軸的間距 */
+    }
+
+    .timeline-container.left, 
+    .timeline-container.right {
+        left: 0;
+    }
+
+    /* 隱藏箭頭（小螢幕） */
+    .timeline-container.left::before, 
+    .timeline-container.right::before {
+        display: none;
+    }
+
+    .content {
+        margin-left: 20px;
+   
+    }
+
+    .content li{
+        margin-left: 20px;
+   
+    }
+}
+
+/* Projects 區域 */
+#projects {
+    padding: 80px 20px;
+    background-color: #ff9966;
+    color: #000;
+    text-align: center;
+}
+
+#projects h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease;
+    margin-bottom: 40px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.projects-container h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.projects-container p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.project-content a {
+    color: #0074d9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-content a:hover {
+    color: #005fa3;
+}
+
+/* Education 區域 */
+#education {
+    padding: 80px 20px;
+    background-color: #fff;
+    color: #000;
+}
+
+#education h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.icon {
+    font-size: 2.5em;
+    color: #ff9933;
+    margin-right: 25px;
+}
+
+.icon i{
+    height: 40px;
+    width: 40px;
+}
+
+.step-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.step-content h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.step-content h4 {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.step-content .date {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #999;
+}
+
+/* 頁腳 */
+footer {
+    background-color: #663300;
+    color: #fff5e6;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+        text-align: center;
+    }
+
+    .project-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .education-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 頁首 */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    /* 調整 intro 區域 */
+    #intro {
+        flex-direction: column;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .intro-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+
+    .right-side h2 {
+        font-size: 2em;
+    }
+
+    .right-side p {
+        font-size: 1.1em;
+    }
+
+    /* 調整 skills 區域 */
+    #skills {
+        padding: 60px 20px;
+    }
+
+    .skills-container {
+        width: 100%;
+    }
+
+    .skill-items {
+        flex-direction: column;
+    }
+
+    /* 調整工作經歷區域 */
+    #experience {
+        padding: 60px 20px;
+    }
+
+    .timeline::after {
+        left: 0;
+    }
+
+    .timeline-container {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .timeline-container.left, .timeline-container.right {
+        left: 0;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    /* 調整 projects 區域 */
+    #projects {
+        padding: 60px 20px;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 調整 education 區域 */
+    #education {
+        padding: 60px 20px;
+    }
+
+    .steps-container {
+        width: 100%;
+    }
+
+    .step {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .icon {
+        margin-bottom: 20px;
+    }
+
+    /* 頁腳 */
+    footer {
+        padding: 40px 20px;
+    }
+}
